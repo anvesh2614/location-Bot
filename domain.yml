@@ -1,0 +1,66 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - pin-code
+  - location_type
+  - thanks
+  - more
+  - my_location
+
+entities:
+  - pin-code
+  - location_type
+  - name
+
+slots:
+  pin-code:
+    type : text
+  
+  location_type:
+    type : text
+
+  name:
+    type : text
+    initial_value : "Buddy"
+
+responses:
+  utter_greet:
+  - text: "Hey {name}! Just write the following command to get started : 
+           know my location"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_ask_pincode:
+  - text: "Can you please share the pincode"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_thanks:
+  - text: "Welocome"
+  - text: "Your most Welcome"
+
+  utter_ask_location_type:
+  - text: What do you want to know?
+    buttons:
+    - title : "State"
+      payload : /location_type{{"location_type":"State"}}
+    - title : "District"
+      payload : /location_type{{"location_type":"District"}}
+    - title : "City"
+      payload : /location_type{{"location_type":"City"}}
+
+actions:
+  - action_hello
+  - action_slot_reset
+  - action_location_info
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

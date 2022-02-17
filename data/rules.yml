@@ -1,0 +1,29 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Say 'Welcome' anytime the user say thxs
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+
+- rule: ask 'location info' anytime the user ask for 'more info'
+  steps:
+  - intent: more
+  - action: action_slot_reset
+  - action: utter_ask_location_type
+
+- rule: pincode query
+  steps:
+  - intent: pin-code
+  - action: action_location_info

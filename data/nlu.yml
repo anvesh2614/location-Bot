@@ -1,0 +1,111 @@
+version: "2.0"
+
+nlu:
+
+- intent: my_location
+  examples: |
+    - know my location
+    - my location
+    - location pls
+    - loc
+    - want to know my location
+    - location please
+    
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hey, [Nikhil](name) here
+    - hello, [Anvesh](name) from this side
+    - hi, i am [aayush](name)
+    - hello there, I am [Ram](name)
+    - good morning, [Sham](name) here
+    - [Shaam](name) here, good evening
+    - [Aayush](name)
+    - [Nikhil](name)
+
+- intent: goodbye
+  examples: |
+    - good bye
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: thanks
+  examples: |
+    - thx
+    - thanks
+    - thank you
+    - thx vey much
+    - ty
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- regex: pin-code
+  examples: |
+    - [1-9]{1}[0-9]{2}[0-9]{3}
+
+- intent: pin-code
+  examples: |
+    - [400037](pin-code)
+    - [400038](pin-code)
+    - [300215](pin-code)
+    - [452189](pin-code)
+    - [400001](pin-code)
+
+- intent: location_type
+  examples: |
+    - [state](location_type)
+    - [district](location_type)
+    - [city](location_type)
+
+- intent: more
+  examples : |
+    - show more
+    - more
+    - more info
+    - more information
+    - know more
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you?
